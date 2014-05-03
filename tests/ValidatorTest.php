@@ -1,6 +1,6 @@
 <?php
 
-require_once('../src/class/Validator.php');
+require_once('class/Validator.php');
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase
 {
