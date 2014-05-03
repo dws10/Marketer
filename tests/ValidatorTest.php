@@ -4,14 +4,6 @@ require_once('../src/class/Validator.php');
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @covers            test constructor
-     * @expectedException InvalidArgumentException
-     */
-    public function testExceptionIsRaisedForInvalidConstructorArgument()
-    {
-        new Validation('guest');
-    }
 
     /**
      * @covers test construct
@@ -20,7 +12,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $validator = new Validation();
 
-        $this->assertInstanceOf(new Validation, $validator);
+        $this->assertInstanceOf('Validation', $validator);
 
         return $validator;
     }
