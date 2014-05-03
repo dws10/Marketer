@@ -1,12 +1,12 @@
 <?php
 
-namespace dws10\Marketer;
+require_once('../src/class/Guest.php');
 
 class GuestTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers            \SebastianBergmann\Money\Currency::__construct
-     * @expectedException \SebastianBergmann\Money\InvalidArgumentException
+     * @covers            test constructor
+     * @expectedException InvalidArgumentException
      */
     public function testExceptionIsRaisedForInvalidConstructorArgument()
     {
@@ -14,13 +14,13 @@ class GuestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \dws10\Marketer\class\Guest::__construct
+     * @covers test construct
      */
     public function testObjectCanBeConstructedForValidConstructorArgument()
     {
         $g = new Guest();
 
-        $this->assertInstanceOf('dws10\\Marketer\\class\\Guest', $g);
+        $this->assertInstanceOf(new Guest, $g);
 
         return $g;
     }
