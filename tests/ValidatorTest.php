@@ -1,6 +1,6 @@
 <?php
 
-require_once('var/lib/hudson/jobs/marketer/marketer_new/workspace/src/class/Validator.php';
+require_once('var/lib/hudson/jobs/marketer/marketer_new/workspace/src/class/Validator.php');
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase
 {
