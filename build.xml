@@ -113,10 +113,13 @@
  </target>
 
  <target name="phpdox" description="Generate API documentation using phpDox">
-  <exec executable="phpdox"/>
+  <exec executable="phpdox" dir="${basedir}/build"/>
  </target>
-
+ 
  <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true"/>
+  <exec executable="phpunit" failonerror="true">
+   <arg value="--configuration"/>
+   <arg path="${basedir}/build/phpunit.xml"/>
+  </exec>
  </target>
 </project>
