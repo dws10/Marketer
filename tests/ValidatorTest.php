@@ -1,8 +1,8 @@
 <?php
 
-require_once('../src/class/Guest.php');
+require_once('../src/class/Validator.php');
 
-class GuestTest extends \PHPUnit_Framework_TestCase
+class ValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @covers            test constructor
@@ -10,7 +10,7 @@ class GuestTest extends \PHPUnit_Framework_TestCase
      */
     public function testExceptionIsRaisedForInvalidConstructorArgument()
     {
-        new Guest('guest');
+        new Validation('guest');
     }
 
     /**
@@ -18,11 +18,11 @@ class GuestTest extends \PHPUnit_Framework_TestCase
      */
     public function testObjectCanBeConstructedForValidConstructorArgument()
     {
-        $g = new Guest();
+        $validator = new Validation();
 
-        $this->assertInstanceOf(new Guest, $g);
+        $this->assertInstanceOf(new Validation, $validator);
 
-        return $g;
+        return $validator;
     }
 
 }
