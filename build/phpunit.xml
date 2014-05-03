@@ -5,7 +5,7 @@
          verbose="true">
   <testsuites>
     <testsuite name="Guest">
-      <directory suffix="Test.php">../tests</directory>
+      <directory>../tests</directory>
     </testsuite>
   </testsuites>
 
@@ -15,14 +15,6 @@
     <log type="coverage-crap4j" target="logs/crap4j.xml"/>
     <log type="junit" target="logs/junit.xml"/>
   </logging>
-
-  <filter>
-    <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">../src</directory>
-      <exclude>
-        <file>../src/autoload.php</file>
-      </exclude>
-    </whitelist>
-  </filter>
+  
 </phpunit>
 
