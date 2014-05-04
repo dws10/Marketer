@@ -24,13 +24,13 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		
 		//tests with integers
 		$min=1;$max=9999; //random number between
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomNumber = rand($min, $max);
 			$this->assertTrue($validator->equals($randomNumber, $randomNumber));
 		}
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
@@ -50,13 +50,13 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		
 		//tests with integers
 		$min=1;$max=9999; //random number between
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomNumber = rand($min, $max);
 			$this->assertFalse($validator->equals($randomNumber, $randomNumber - 1));
 		}
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
@@ -71,7 +71,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with alpha strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
@@ -87,7 +87,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		
 		//tests with integers
 		$min=1;$max=9999; //random number between
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomNumber = rand($min, $max);
 			$this->assertFalse($validator->alpha($randomNumber));
 		}
@@ -98,7 +98,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with alpha strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
@@ -114,7 +114,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		
 		//tests with integers
 		$min=1;$max=9999; //random number between
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomNumber = rand($min, $max);
 			$this->assertTrue($validator->numeric($randomNumber));
 		}
@@ -125,7 +125,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
@@ -140,7 +140,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
@@ -155,7 +155,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomString = '';
 			
 			$length = rand(1, 250);
@@ -171,7 +171,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomString = '';
 			$length = rand(1, 250);
 			for ($i = 0; $i < $length; $i++) {
@@ -186,7 +186,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomString = '';
 			
 			$length = rand(1, 250);
@@ -203,7 +203,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$validator = new Validation();
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 		//test with numeric strings
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$randomString = '';
 			
 			$length = rand(1, 250);
@@ -223,7 +223,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		$tlds = array("com", "net", "gov", "org", "edu", "biz", "info");
 		$characters = array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','.'); 
 		
-		for($i = 0; $i < 100; $i++){
+		for($i = 0; $i < 30; $i++){
 			$username = '';
 			$length = rand(1, 100);
 			for ($i = 0; $i < $length; $i++) {
