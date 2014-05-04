@@ -8,7 +8,7 @@
             	<input type="hidden" name="listing_id" value="{$listing_id}"/>
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">New Listing</h3>
+                        <h3 class="panel-title">Edit Listing</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
