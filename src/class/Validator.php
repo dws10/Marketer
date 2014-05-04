@@ -12,7 +12,7 @@ class Validation{
 	}
 	//validate argument is alphabetic
 	public function alpha($arg){
-		if(ctype_alpha($arg)){
+		if(ctype_alpha((String)$arg)){
 			return true;
 		}else{
 			return false;
@@ -20,7 +20,7 @@ class Validation{
 	}
 	//validate argument is numeric
 	public function numeric($arg){
-		if(ctype_digit($arg)){
+		if(ctype_digit((String)$arg)){
 			return true;
 		}else{
 			return false;
@@ -28,7 +28,7 @@ class Validation{
 	}
 	//validate argument is alphanumeric
 	public function alpha_numeric($arg){
-		if(ctype_alnum($arg)){
+		if(ctype_alnum((String)$arg)){
 			return true;
 		}else{
 			return false;
@@ -36,7 +36,7 @@ class Validation{
 	}
 	//validate argument 1 is the length specified by argument 2
 	public function length_equals($arg, $len){
-		if(strlen($arg)==$len){
+		if(strlen((String)$arg)==$len){
 			return true;
 		}else{
 			return false;	
@@ -44,7 +44,7 @@ class Validation{
 	}
 	//validate argument 1 is more than the length specified by argument 2
 	public function length_more($arg, $len){
-		if(strlen($arg)>$len){
+		if(strlen((String)$arg)>$len){
 			return true;
 		}else{
 			return false;	
@@ -52,7 +52,7 @@ class Validation{
 	}
 	//validate argument 1 is less than the length specified by argument 2
 	public function length_less($arg, $len){
-		if(strlen($arg)<$len){
+		if(strlen((String)$arg)<$len){
 			return true;
 		}else{
 			return false;	
