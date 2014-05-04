@@ -76,7 +76,8 @@ function listing_create($formValues){
 		}
 		//validate duration (required)
 		$duration = $formValues['duration'];
-		if($validate->equals($duration, 0)){
+		
+		if($validate->equals($duration, '0')){
 			//assign error
 			$error_msg = 'Please select a listing duration';
 			$resp->assign('duration-error','innerHTML',$error_top.$error_msg.$error_bot);
