@@ -211,7 +211,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertFalse($validator->length_more($randomString, $length + rand(10, 250)));
-			$this->assertFalse($validator->length_less($randomString, $length + rand(10, 250)));
+			$this->assertTrue($validator->length_less($randomString, $length + rand(10, 250)));
 		}
 			
         return $validator;
