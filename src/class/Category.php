@@ -1,4 +1,6 @@
 <?PHP
+/// A store category.
+/** Models a store's product category. */
 class Category{
 
 	public $category_id; //cat id
