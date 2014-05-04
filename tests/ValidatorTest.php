@@ -194,7 +194,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertTrue($validator->length_more($randomString, $length - rand(10, 250)));
-			$this->assertFalse($validator->length_less($randomString, $length + rand(10, 250)));
+			$this->assertFalse($validator->length_less($randomString, $length - rand(10, 250)));
 		}
 			
         return $validator;
@@ -210,8 +210,8 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			for ($i = 0; $i < $length; $i++) {
 				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
-			$this->assertFalse($validator->length_more($randomString, $length+rand(10, 250)));
-			$this->assertTrue($validator->length_less($randomString, $length-rand(10, 250)));
+			$this->assertFalse($validator->length_more($randomString, $length + rand(10, 250)));
+			$this->assertFalse($validator->length_less($randomString, $length + rand(10, 250)));
 		}
 			
         return $validator;
@@ -225,12 +225,12 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 		
 		for($i = 0; $i < 30; $i++){
 			$username = '';
-			$length = rand(1, 100);
+			$length = rand(10, 64);
 			for ($i = 0; $i < $length; $i++) {
 				$username .= $characters[rand(0, count($characters)-1)];
 			}
 			$domain = '';
-			$length = rand(1, 100);
+			$length = rand(10, 64);
 			for ($i = 0; $i < $length; $i++) {
 				$domain .= $characters[rand(0, count($characters)-1)];
 			}
