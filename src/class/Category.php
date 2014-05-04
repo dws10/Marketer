@@ -3,18 +3,18 @@
 /** Models a store's product category. */
 class Category{
 
-	public $category_id; //cat id
-	public $category_name; 
-	public $ebay_category_id;
-	public $ebay_category;
-	public $category_ebay_store_id;
+	public $category_id; /**< the categories identifier in our database */
+	public $category_name; /**< the categories name in the store */
+	public $ebay_category_id; /**< the categories eBay ID number */
+	public $ebay_category; /**< the categories EbayCategory object */
+	public $category_ebay_store_id; /**< the ebay store id category this category refers to */
 	
-	/*
-	*@constructor
-	*@param int $category_id the categories id
-	*@param int $name the categories name
-	*@param int $ebay_id the categories ebay category id
-	*@param int $ebay_store_id the categories ebay store category id
+	/**
+	* The constructor
+	* @param int $category_id the categories id
+	* @param int $name the categories name
+	* @param int $ebay_id the categories ebay category id
+	* @param int $ebay_store_id the categories ebay store category id
 	*/
 	public function __construct($category_id, $name, $ebay_id, $ebay_store_id){
 		//constructor sets class variables
@@ -24,9 +24,10 @@ class Category{
 		$this->setEbayCategoryFromDB($ebay_id);//set the ebaycategory object
 		$this->category_ebay_store_id = $ebay_store_id;//set the ebay storeID
 	}
-	/*
-	*@method setEbayCategoryFromDB loads the categories ebay category object from the database
-	*@param int $ebay_id the categories ebay category id
+	/**
+	* loads the categories ebay category object from the database
+	* @param int $ebay_id the categories ebay category id
+	* @return success or error
 	*/
 	public function setEbayCategoryFromDB($ebay_id){
 		$mysqli = new mysqli(SQL_HOST, SQL_USER, SQL_PASS, SQL_DB);
@@ -50,15 +51,17 @@ class Category{
 			}	
 		}
 	}
-	/*
-	*@method getEbayCategory returns the ebay category
+	/**
+	* returns the ebay category
+	* @return the ebay category
 	*/
 	public function getEbayCategory(){
 		return $this->ebay_category;
 	}
-	/*
-	*@method addCategory add a new category to our system by system storeID
-	*@param int $store_id the store id to add the category to
+	/**
+	* add a new category to our system by system storeID
+	* @param int $store_id the store id to add the category to
+	* @return success or error
 	*/
 	public function addCategory($store_id){
 		$mysqli = new mysqli(SQL_HOST, SQL_USER, SQL_PASS, SQL_DB);
@@ -76,8 +79,9 @@ class Category{
 			return true;
 		}	
 	}
-	/*
-	*@method updateCategory update a sellers store category
+	/**
+	* update a sellers store category
+	* @return success or error
 	*/
 	public function updateCategory(){
 		$mysqli = new mysqli(SQL_HOST, SQL_USER, SQL_PASS, SQL_DB);
