@@ -34,7 +34,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertTrue($validator->equals($randomString, $randomString));
 		}
@@ -60,7 +60,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertFalse($validator->equals($randomString, substr($randomString, 1)));
 		}
@@ -75,7 +75,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertTrue($validator->alpha($randomString));
 		}
@@ -102,7 +102,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertFalse($validator->numeric($randomString));
 		}
@@ -129,7 +129,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertTrue($validator->equals($randomString, substr($randomString, 1)));
 		}
@@ -144,7 +144,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$length = rand(1, 250);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertFalse($validator->alpha_numeric($randomString.'#'));
 		}
@@ -160,7 +160,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			
 			$length = rand(1, 250);
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertTrue($validator->length_equals($randomString, $length));
 		}
@@ -175,7 +175,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$randomString = '';
 			$length = rand(1, 250);
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertFalse($validator->length_equals($randomString, $length+rand(1, 250)));
 		}
@@ -191,7 +191,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			
 			$length = rand(1, 250);
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertTrue($validator->length_more($randomString, $length-rand(1, 250)));
 			$this->assertFalse($validator->length_less($randomString, $length+rand(1, 250)));
@@ -208,7 +208,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			
 			$length = rand(1, 250);
 			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, count($characters))];
+				$randomString .= $characters[rand(0, count($characters)-1)];
 			}
 			$this->assertFalse($validator->length_more($randomString, $length+rand(1, 250)));
 			$this->assertTrue($validator->length_less($randomString, $length-rand(1, 250)));
@@ -227,15 +227,15 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 			$username = '';
 			$length = rand(1, 100);
 			for ($i = 0; $i < $length; $i++) {
-				$username .= $characters[rand(0, count($characters))];
+				$username .= $characters[rand(0, count($characters)-1)];
 			}
 			$domain = '';
 			$length = rand(1, 100);
 			for ($i = 0; $i < $length; $i++) {
-				$domain .= $characters[rand(0, count($characters))];
+				$domain .= $characters[rand(0, count($characters)-1)];
 			}
 			
-			$email = $username.'@'.$domain.'.'.$tlds[rand(0,count($tlds))];
+			$email = $username.'@'.$domain.'.'.$tlds[rand(0,count($tlds)-1)];
 			
 			$this->assertTrue($validator->email($email));
 		}
